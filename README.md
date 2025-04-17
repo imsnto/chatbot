@@ -90,7 +90,7 @@ This project implements a conversational AI chatbot using LangChain and the Olla
 5. Open a pull request.
 
 ## License
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT. See the [LICENSE](LICENSE) file for details.
 
 ## Resources
 - [LangChain Documentation](https://python.langchain.com/docs/)
