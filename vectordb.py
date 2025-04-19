@@ -7,18 +7,21 @@ from embeddings import embedding_model
 from llms import llm 
 
 # define persistent directory
-chroma_database_location = 'chromadb'
+chroma_database_location = os.path.join(os.path.dirname(__file__), 'chromadb')
 os.makedirs(chroma_database_location, exist_ok=True)
 
+print(f"Chroma database location: {chroma_database_location}")
 
+""" No need at this moment
 # Configure chromadb settings for persistent
 chroma_settings = Settings(
     persist_directory = chroma_database_location,
     anonymized_telemetry = False
 )
+"""
 
 # Initialize ChromaDB client
-client = chromadb.Client(chroma_settings)
+client = chromadb.PersistentClient(chroma_database_location)
 
 # Create or get collection
 collection_name = "chatbot_responses"
@@ -30,6 +33,7 @@ try:
 except Exception as e:
     print(f"Error with collection : {e}")
     raise
+
 
 # Sample dataset: question-response pairs
 responses = [
@@ -51,3 +55,4 @@ collection.add(
     ids = ids,
     metadatas=metadatas
 )
+print(f"Collection counts: {collection.count()}")
