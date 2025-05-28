@@ -1,7 +1,7 @@
 
-from embeddings import embedding_model
-from llms import llm, call_groq
-from vectordb import collection
+from src.utils.embeddings import embedding_model
+from src.utils.llms import llm, call_groq
+from src.services.vectordb import collection
 
 # RAG function: Retrieve context and generate response with LLM
 def rag_response(query: str, top_k: int = 2, min_similarity: float = 0.3) -> str:

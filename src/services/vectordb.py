@@ -3,8 +3,8 @@ import os
 import chromadb 
 from chromadb.config import Settings
 
-from embeddings import embedding_model
-from llms import llm 
+from src.utils.embeddings import embedding_model
+from src.utils.llms import llm 
 
 # define persistent directory
 chroma_database_location = os.path.join(os.path.dirname(__file__), 'chromadb')

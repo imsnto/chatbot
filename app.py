@@ -1,8 +1,9 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 
-from rag import rag_response
+from src.services.rag import rag_response
+from src.models.schemas import QueryRequest
+
 
 app = FastAPI(
     title="RAG Chatbot",
@@ -10,8 +11,6 @@ app = FastAPI(
     version="0.1.0"
 )
 
-class QueryRequest(BaseModel):
-    query: str 
 
 
 @app.post("/query")

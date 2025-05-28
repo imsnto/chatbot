@@ -1,4 +1,4 @@
-from rag import rag_response
+from src.services.rag import rag_response
 
 # Interactive chatbot loop
 
